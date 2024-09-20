@@ -55,5 +55,5 @@ export async function updateInvoice(id: string, formData: FormData) {
 
 export async function deleteInvoice(id: string) {
   await sql`DELETE FROM invoices WHERE id = ${id}`;
-  revalidatePath('/dashboard/invoices');
+  revalidatePath('/dashboard/invoices'); // 重置缓存, 会自动刷新页面
 }
